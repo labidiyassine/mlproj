@@ -9,14 +9,7 @@ import seaborn as sns
 import streamlit as st
 
 # Load the dataset
-try:
-    data = pd.read_csv('dataset/data.csv')
-except FileNotFoundError:
-    st.error("The dataset file was not found. Please check the file path.")
-    st.stop()  # Stop the execution of the app if the file is not found
-except Exception as e:
-    st.error(f"An error occurred while loading the dataset: {e}")
-    st.stop()  # Stop the execution of the app for any other errors
+data = pd.read_csv('dataset/data.csv')
 
 # Print the initial shape of the dataset
 st.write(f'Initial dataset shape: {data.shape}')
